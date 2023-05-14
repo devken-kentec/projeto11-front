@@ -1,0 +1,44 @@
+.title-home {
+  padding-top: 15px;
+  font-size: 14pt;
+  text-transform: uppercase;
+}
+
+.empresablock {
+  border: 1px solid black;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+}
+
+.conteudoblock {
+  border: 1px solid black;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+}
+
+.pessoasblock {
+  border: 1px solid black;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 0px;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.2);
+}
+
+

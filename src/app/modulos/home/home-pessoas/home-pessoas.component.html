@@ -1,0 +1,207 @@
+<div *ngIf="componentPessoas" class="bg-faixa mb-1">
+  Olá, {{ nomeUsuario }}
+  <div class="float-right" style="font-size: 14pt;">
+    <a type="button" class="text-success" title="Postar" (click)="limparFormularioPostagem()" data-toggle="modal" data-target="#ModalPostagem"><i class="fa fa-play" aria-hidden="true"></i></a>
+    <a type="button" class="text-primary" title="Editar Perfil" (click)="entrarPerfil()" ><i class="fa fa-user-circle" aria-hidden="true"></i></a>
+    <a type="button" class="text-danger" title="Curriculum" (click)="entrarPerfilView()"><i class="fa fa-id-card" aria-hidden="true"></i></a>
+  </div>
+</div>
+<h1 class="h6 text-uppercase">Pessoas</h1>
+<div *ngIf="componentPessoas" class="d-flex justify-content-center">
+  <img src="assets/user.png" alt="user" width="120" style="box-shadow: 0px 0px 2px black; border-radius: 100px;">
+</div>
+<button *ngIf="btnCriarConta" type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#ModalCadastro">
+  Crie sua Conta Aqui!
+</button>
+<div *ngIf="btnCriarConta" class="mt-3">
+  <fieldset>
+    <legend>Login</legend>
+    <form class="needs-validation" novalidate [formGroup]="loginForm">
+      <div class="form-group">
+        <input type="email" class="form-control" id="emailLogin" placeholder="exemplo@exmplo.com.br" formControlName="email">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" id="senhaLogin" placeholder="Senha" formControlName="senha">
+      </div>
+      <button type="button" class="btn btn-success btn-block" (click)="logar()" >
+        Logar
+      </button>
+    </form>
+  </fieldset>
+</div>
+<!-- Modal Cadastro de Usuário-->
+<div class="modal fade bd-example-modal-lg" id="ModalCadastro" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalLongoExemplo">Cadastre sua Conta.</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="needs-validation" novalidate [formGroup]="cadastroForm">
+          <div class="form-group">
+            <label for="dataDeNascimento">Data de Nascimento</label>
+            <input type="date" class="form-control" id="dataDeNascimento" formControlName="dataDeNascimento">
+          </div>
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control" id="nome" placeholder="Apenas o Primeiro Nome" formControlName="nome">
+          </div>
+          <div class="form-group">
+            <label for="sobreNome">Sobrenome</label>
+            <input type="text" class="form-control" id="sobreNome" placeholder="O seu Sobrenome" formControlName="sobreNome">
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" class="form-control" id="email" placeholder="exemplo@exmplo.com.br" formControlName="email">
+          </div>
+          <div class="form-group">
+            <label for="cep">CEP</label>
+            <input type="text" class="form-control" id="cep" placeholder="Seu CEP" formControlName="cep">
+          </div>
+          <div class="form-group">
+            <label for="senha">Senha</label>
+            <input type="password" class="form-control" id="senha" placeholder="Senha" formControlName="senha">
+          </div>
+          <div class="form-group">
+            <label for="repitaSenha">Repita a sua Senha</label>
+            <input type="password" class="form-control" id="repitaSenha" placeholder="Repita a sua Senha" formControlName="confirmarSenha">
+          </div>
+          <div>
+            <div class="text-justify">
+              <div>Termos para uso da Rede Social.</div>
+            <br>
+            <div>1.º Esta Rede Social tem por finalidade de proprocionar interação social entre Pessoas é Empresas.</div><br>
+            <div>2.º Todas as postagem é conteúdo da desta Rede Social tem como objetivo promover uma interação social sadia
+              entre seus membros, Promover Negócios, Serviços de Utilidade Publica, Conteúdo Educacional, Visibiliade Profissional
+              e Marketing Digital e Empresarial.
+            </div><br>
+            <div>3.º Não será permitido contéudos inapropriados, que constraja ou traga prejuizo a imagem dos membros.</div><br>
+            <div>4.º Os conteúdos inapropriados postados, poderam ser retirados das publicações pelos proprios membros mediante de justificativa
+              plausivel, é avaliada pelos administradores da rede, podendo acarretar o cancelamento da conta do membro que realizou a postagem
+              inapropriada.
+            </div><br>
+            </div>
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="termoDeUso">
+            <label class="form-check-label" for="exampleCheck1">Aceitar Termos de Uso.</label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button"
+                class="btn btn-success"
+                [disabled]="!cadastroForm.valid"
+                (click)="enviarFormulario()"
+                >
+            Enviar Cadastro
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<form *ngIf="componentPessoas"  [formGroup]="pesquisaForm" class="needs-validation" novalidate>
+  <div class="form-row mt-1">
+    <div class="form-group input-group col-md-12">
+      <input
+        type="text"
+        class="form-control"
+        id="pesquisa"
+        formControlName="pesquisa"
+        placeholder="Pesquisar"
+        autocomplete="off"
+        (input)="buscarPorNome()"
+        />
+        <div class="input-group-append">
+          <span class="input-group-text" id="pesquisar"><i class="fas fa-search"></i></span>
+        </div>
+    </div>
+  </div>
+</form>
+<div *ngIf="listarAmigo">
+  <small><a type="button" class="text-primary pointer" (click)="sairListaAmigos()">Fechar Lista</a></small>
+  <hr>
+  <ul  class="list-group procura" *ngFor="let amigo of amigos">
+    <li class="list-empresa d-flex justify-content-between align-items-center">
+      <span>{{ amigo.nome }}<br><small>{{ amigo.sobreNome }}</small></span><span><button class="btn btn-success" title="Pedir Amizade" (click)="solicitarAmizade(amigo.id)"><i class="fas fa-grin-wink"></i></button></span>
+    </li>
+  </ul>
+  <hr>
+</div>
+<!-- Modal para Postagens-->
+<div class="modal fade" id="ModalPostagem" tabindex="-1" role="dialog" aria-labelledby="postagemModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="postagemModal">Oi, {{nomeUsuario }}<br><span style="font-size: 12pt;" >Nova Postagem.</span></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="needs-validation" novalidate [formGroup]="postagemForm">
+          <div class="form-group">
+            <label for="titulo">Título da sua Postagem</label>
+            <input type="text" class="form-control" id="titulo" placeholder="O Título é opcinal." formControlName="titulo">
+          </div>
+          <div class="form-group">
+            <label for="mensagem">Mensagem</label>
+            <textarea type="text" class="form-control" id="mensagem" rows="6" placeholder="Sua Mensagem vai aqui!" formControlName="mensagem">
+            </textarea>
+          </div>
+          <div class="form-group">
+            <label for="tipoPostagem">Escolha o Tipo de Postagem</label>
+            <select class="form-control" id="tipoPostagem" formControlName="tipoPostagem">
+              <option value="" selected>Escolha...</option>
+              <option *ngFor="let tipoPostagem of tiposPostagens" [value]="tipoPostagem.id">{{tipoPostagem.descricao}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="tipoPostagem">Visibilidade</label>
+            <div class="form-check">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="inlineCheckbox1" formControlName="visibilidade" name="visibilidade" value="todos" checked>
+                <label class="form-check-label" for="inlineCheckbox1">Todos</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="inlineCheckbox2" formControlName="visibilidade" name="visibilidade" value="Amigos">
+                <label class="form-check-label" for="inlineCheckbox2">Somente Amigos</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="link">Inserir Link</label>
+            <input type="text" class="form-control" id="link" placeholder="Insira uma URL" formControlName="link">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button"
+                class="btn btn-success"
+                [disabled]="!postagemForm.valid"
+                (click)="enviarPostagem()"
+                >
+            Enviar Postagem
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="componentPessoas">
+  <div class="mb-1" style="font-size: 10pt;">Meus amigos</div>
+  <ul class="list-group amigos" *ngFor="let listaAmigo of listaAmigos">
+    <li class="list-empresa d-flex justify-content-between align-items-center">
+      {{ listaAmigo.amigo }}
+      <span class="badge badge-primary badge-pill">{{ listaAmigo.idAmigo }}</span>
+    </li>
+  </ul>
+</div>
+
+
+
+

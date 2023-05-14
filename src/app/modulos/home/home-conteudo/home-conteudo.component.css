@@ -1,0 +1,18 @@
+.postblock {
+  border: 1px solid silver;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 10px 10px 5px 10px;
+  margin-bottom: 15px;
+}
+
+.bg-success {
+  background-color: #ebedf0 !important;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+#botaoPesquisa {
+  padding: 2px !important;
+}
+

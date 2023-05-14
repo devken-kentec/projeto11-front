@@ -1,0 +1,104 @@
+<div class="banner d-flex align-items-center">
+  <div class="col-12 col-md-12 row">
+    <div class="col-12 col-md-6 d-flex align-items-center justify-content-center text-white mb-5">
+      <div class="text-center">
+        <h1>DELTA SPORT FISHER</h1>
+        <h3 class="subtitulo">Tudo para sua Pesca!</h3>
+        <p style="font-size: 14pt;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          <a  type="button" href="#faixa-venda" class="btn btn-primary text-uppercase font-weight-bold btn1">Confira aqui</a>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 d-flex justify-content-center">
+      <img src="assets/tucu01.png" alt="deltatucunare" class="img-fluid tucu bounceInLeft">
+    </div>
+  </div>
+</div>
+<div class="produtos">
+  <div class="text-center">
+    <h1 class="titulo-produto">Nossos Produtos</h1>
+    <span class="mu-header-dot"></span>
+    <h3 class="mb-5">Trabalhamos com os melhores produtos do mercado!</h3>
+  </div>
+  <div>
+    <div id="carouselExampleIndicators" class="carousel slide"  data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="container">
+            <ul class="list-unstyled">
+              <li><img class="img-fluid" src="assets/camiseta.jpeg" alt="" width="250"></li>
+              <li><img class="img-fluid ml-2" src="assets/care1.jpg" alt="" width="250"></li>
+              <li><img class="img-fluid ml-2" src="assets/carre3.jfif" alt="" width="250"></li>
+              <li><img class="img-fluid ml-2" src="assets/care2.webp" alt="" width="250"></li>
+            </ul>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="container">
+            <ul class="list-unstyled">
+              <li><img class="img-fluid" src="assets/molinete1.webp" alt="" width="250"></li>
+              <li><img class="img-fluid" src="assets/molinete2.webp" alt="" width="250"></li>
+              <li><img class="img-fluid" src="assets/kit1.webp" alt="" width="250"></li>
+              <li><img class="img-fluid" src="assets/vara1.webp" alt="" width="250"></li>
+            </ul>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="container">
+            <ul class="list-unstyled">
+              <li><img class="img-fluid" src="assets/vara1.webp" alt="" width="250"></li>
+              <li><img class="img-fluid" src="assets/care1.jpg" alt="" width="250"></li>
+              <li><img class="img-fluid" src="assets/care2.webp" alt="" width="250"></li>
+              <li><img class="img-fluid" src="assets/vara2.webp" alt="" width="250"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Próximo</span>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="vendas">
+  <div id="faixa-venda">
+    <div class="text-center">
+      <h1 style="color: black;">Compra Agora</h1>
+    </div>
+    <div class="text-center text-uppercase">
+      <h1 class="titulo-compra">Compre Agora</h1>
+      <h3 class="mb-5 titulo-compra">Peça agora pelo whatsapp os nossos Produtos</h3>
+    </div>
+    <div class="row col-12 mt-5">
+        <div class="col-12 col-md-3 mb-4" *ngFor="let p of produtos" id="loja">
+          <div class="card">
+            <div class="logo d-flex align-items-center">
+              <img class="card-img-top" [src]="p.imagem" [alt]="p.titulo" width="250">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ p.titulo }} - {{ p.cores }}</h5>
+              <p class="card-text">{{ p.detalhes }}</p>
+              <button  type="button" class="btn btn-primary btn-block">Entre e aproveite</button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

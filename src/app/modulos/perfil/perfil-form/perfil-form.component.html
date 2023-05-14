@@ -1,0 +1,191 @@
+<div class="container">
+  <nav>
+    <ol class="breadcrumb bg-white">
+      <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+      <li class="breadcrumb-item active">Configurar Perfil</li>
+    </ol>
+  </nav>
+  <div class="row">
+      <div class="col-12 col-md-6 perfilblock">
+        <form [formGroup]="perfilForm">
+          <div style="font-size: 11pt;">
+              <div class="card-body">
+                <nav class="col-md-12">
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="nav-dp-tab" data-toggle="tab" href="#nav-dp" role="tab" aria-controls="nav-dp" aria-selected="true">Dados Principais</a>
+                    <a class="nav-item nav-link" id="nav-dc-tab" data-toggle="tab" href="#nav-dc" role="tab" aria-controls="nav-dc" aria-selected="false">Dados Complementares</a>
+                    <a class="nav-item nav-link" id="nav-ff-tab" data-toggle="tab" href="#nav-ff" role="tab" aria-controls="nav-ff" aria-selected="false">Foto do Perfil</a>
+                  </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="nav-dp" role="tabpanel" aria-labelledby="nav-dp-tab">
+                    <div class="form-row col-md-12 mt-3">
+                      <div class="form-group col-md-12">
+                        <label for="nome">Nome</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="nome"
+                          formControlName="nome"
+                          />
+                      </div>
+                    </div>
+                    <div class="form-row col-md-12 mt-3">
+                      <div class="form-group col-md-12">
+                        <label for="sobrenome">Sobrenome</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="sobrenome"
+                          formControlName="sobreNome"
+                          />
+                      </div>
+                    </div>
+                    <div class="form-row col-md-12 mt-3">
+                      <div class="form-group col-md-5">
+                        <label for="dataDeNascimento">Data de Nascimento</label>
+                        <input
+                            type="date"
+                            class="form-control"
+                            id="dataDeNascimento"
+                            formControlName="dataDeNascimento"/>
+                      </div>
+                      <div class="form-group col-md-7">
+                        <label for="email">E-mail</label>
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            formControlName="email"/>
+                      </div>
+                    </div>
+                    <div class="form-row col-md-12 mt-3">
+                      <div class="form-group">
+                        <label for="cep">CEP</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="cep"
+                            formControlName="cep"/>
+                      </div>
+                    </div>
+                    <div class="form-row col-md-12 mt-3">
+                      <button type="button" class="btn btn-success btn-block" (click)="alterarPerfilUsuario()">Salvar Dados</button>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="nav-dc" role="tabpanel" aria-labelledby="nav-dc-tab">
+                    <div class="form-row col-md-12 mt-3">
+                      <div class="form-group col-md-12">
+                        <label for="escola">Escola</label>
+                        <input type="text" class="form-control" id="escola" formControlName="escola">
+                      </div>
+                    </div>
+                    <div class="form-row col-md-12 mt-3">
+                      <div class="form-group col-md-12">
+                        <label for="faculdade">Falculdade</label>
+                        <input type="text" class="form-control" id="faculdade" formControlName="faculdade"/>
+                      </div>
+                    </div>
+                    <div class="form-row col-md-12 mt-3">
+                      <div class="form-group col-md-12">
+                        <label for="trabalho">Trabalho</label>
+                        <input type="text" class="form-control" id="trabalho" formControlName="trabalho"/>
+                      </div>
+                    </div>
+                    <div class="form-row col-md-12 mt-3">
+                      <div class="form-group col-md-6">
+                        <label for="estadoCivil">Estado Civil</label>
+                        <select class="form-control" id="estadoCivil" formControlName="estadoCivil">
+                          <option value="Solteiro(a)">Solteiro(a)</option>
+                          <option value="Ficando">Ficando</option>
+                          <option value="Manorando">Namorando</option>
+                          <option value="Noivo(a)">Noivo(a)</option>
+                          <option value="Casado(a)">Casado(a)</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="telefone">Telefone</label>
+                        <input type="text" class="form-control" id="telefone" formControlName="telefone"/>
+                      </div>
+                    </div>
+                    <div class="form-row col-md-12 mt-3">
+                      <button class="btn btn-success btn-block" (click)="gravarDadosComplementares()">Salvar Dados Complementares</button>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="nav-ff" role="tabpanel" aria-labelledby="nav-ff-tab">
+                    <div class="form-group col-md-12 card mt-4" >
+                      <div class="d-flex justify-content-center mt-3">
+                        <img  style="width: 100;"  class="img-fluid" [src]="render"/>
+                      </div>
+                    </div>
+                    <div class="form-row col-md-12">
+                      <div class="col-md-12">
+                        <label for="foto">Incluir Foto:</label>
+                        <input type="file" class="form-control-file text-success" id="foto" (change)="uploadFoto($event)" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="postagensblock" style="overflow: auto; max-height: 200px;">
+          <div class="bg-faixa mb-1 text-primary" >Minhas Postagens</div>
+          <div id="table" class="table-responsive">
+            <table class="table table-borderless table-sm" >
+              <tbody>
+                <tr *ngFor="let postagem of postagens" >
+                  <td>
+                    <button  class="btn btn-outline-info btn-sm"><i class="far fa-edit"></i></button>
+                  </td>
+                  <td>{{postagem.titulo}}</td>
+                  <td>{{ globalService.formatarDate(postagem.dataPostagem) }} - {{ globalService.formatarTime(postagem.dataPostagem) }}</td>
+                  <td>
+                    <button  data-toggle="modal" data-target="#ModalExclusao" class="btn btn-outline-danger btn-sm"><i class="fas fa-user-slash"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="amigosblock" style="overflow: auto; max-height: 200px;">
+          <div class="bg-faixa mb-1 text-primary" >Meus Amigos</div>
+          <div id="table" class="table-responsive">
+            <table class="table table-borderless table-sm">
+              <tbody>
+                <tr *ngFor="let amigo of amigos" >
+                  <td>
+                    <button  class="btn btn-outline-info btn-sm"><i class="far fa-edit"></i></button>
+                  </td>
+                  <td>{{amigo.amigo}}</td>
+                  <td>
+                    <button  data-toggle="modal" data-target="#ModalExclusao" class="btn btn-outline-danger btn-sm"><i class="fas fa-user-slash"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="amigosblock" style="overflow: auto; max-height: 200px;">
+          <div class="bg-faixa mb-1 text-primary">Solicitações de Amizade</div>
+          <div id="table" class="table-responsive">
+            <table class="table table-borderless table-sm">
+              <tbody>
+                <tr *ngFor="let amigoSolicitacao of amigosSolicitando" >
+                  <td>
+                    <button  class="btn btn-outline-info btn-sm"><i class="far fa-edit"></i></button>
+                  </td>
+                  <td>{{amigoSolicitacao.amigo}}</td>
+                  <td>
+                    <button  data-toggle="modal" data-target="#ModalExclusao" class="btn btn-outline-danger btn-sm"><i class="fas fa-user-slash"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
