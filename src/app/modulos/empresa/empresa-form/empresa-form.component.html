@@ -7,9 +7,9 @@
         <li class="breadcrumb-item active">Empresa</li>
       </ol>
     </nav>
-    <form class="needs-validation" novalidate [formGroup]="empresaForm">
+    <form class="needs-validation form-shadow" novalidate [formGroup]="empresaForm">
       <div class="card">
-        <div class="card-header bg-dark" style="color: white; font-size: 14pt; font-weight: bold;">
+        <div class="card-header header-style">
           Cadastro de Empresas
         </div>
         <div class="card-body">
@@ -276,7 +276,7 @@
             </div>
             <div class="tab-pane fade" id="nav-finali" role="tabpanel" aria-labelledby="nav-finali-tab">
               <div class="form-row col-md-12 mt-3">
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6">
                   <label for="ramoDeAtividade">Ramo de Atividade:</label>
                   <input
                     type="text"
@@ -284,7 +284,14 @@
                     id="ramoDeAtividade"
                     formControlName="ramoDeAtividade"/>
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-2">
+                  <label for="grupo">Grupos:</label>
+                  <select id="grupo" class="form-control" formControlName="grupo">
+                    <option [value]="">Selecione</option>
+                    <option *ngFor="let g of gruposSelect" [value]="g.value">{{ g.viewValue }}</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-2">
                   <label for="dataCadastro">Data do cadastro:</label>
                   <input
                     type="date"
@@ -292,7 +299,7 @@
                     id="dataCadastro"
                     formControlName="dataCadastro"/>
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-2">
                   <label for="statusEmpresa">Status Empresa:</label>
                   <select id="statusEmpresa" class="form-control" formControlName="statusEmpresa">
                     <option value="">Selecione</option>
@@ -307,10 +314,10 @@
       </div>
     </form>
     <div class="float-right mt-3">
-      <button  type="submit" data-toggle="modal" data-target="#ModalSalvar" class="btn btn-success">
+      <button  type="submit" data-toggle="modal" data-target="#ModalSalvar" class="btn btn-success btn-shadow">
         <i class="fas fa-save"></i> &nbsp;Salvar
       </button>
-      <button routerLink="/empresa" class="btn btn-info ">
+      <button routerLink="/empresa" class="btn btn-info btn-shadow">
         <i class="fas fa-backward"></i>&nbsp;Voltar
       </button>
     </div>

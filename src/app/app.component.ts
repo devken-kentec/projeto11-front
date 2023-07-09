@@ -9,13 +9,16 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
 
   title = 'TAPP';
+  open: boolean = false;
+  teste: string = 'Lorenzo';
 
   constructor(private router: Router){ }
 
   ngOnInit(): void {
-    this.router.navigate(['/homev2']);
+    //this.router.navigate(['/home']);
   }
-  open: boolean = false;
+
+
 
 
   public abrirMenu() {

@@ -4,7 +4,7 @@ import { Usuario } from './../shared/usuario';
 import { TipoPostagem } from './../shared/tipo-postagem';
 import { AuthService } from './../../auth/auth.service';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HomeService } from '../shared/home.service';
 import { GlobalService } from '../../shared/global.service';
 import { Amigo } from '../../amigos/shared/amigo';
@@ -27,6 +27,7 @@ export class HomePessoasComponent implements OnInit {
   tiposPostagens: TipoPostagem[] = [];
   amigos: Usuario[] = [];
   listaAmigos: Amigo[] = [];
+  @Input() pegarNome!: string;
 
   cadastroForm = this.fb.group({
     dataDeNascimento: ['',[Validators.required]],

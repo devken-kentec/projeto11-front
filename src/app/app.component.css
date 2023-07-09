@@ -13,16 +13,18 @@ footer {
 
 ul > li {
   display: inline !important;
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
 ul > li a {
    text-decoration: none;
-   font-size: 14pt;
+   font-size: 10pt;
 }
 
 ul > li a:hover {
   color: #fff !important;
 }
+
+
 
 

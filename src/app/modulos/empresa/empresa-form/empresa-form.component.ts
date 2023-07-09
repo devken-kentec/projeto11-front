@@ -2,6 +2,11 @@ import { EmpresaService } from './../shared/empresa.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
+interface Grupo {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-empresa-form',
   templateUrl: './empresa-form.component.html',
@@ -31,6 +36,7 @@ export class EmpresaFormComponent implements OnInit {
                   municipio: ['',[]],
                   estado: ['',[]],
                   ramoDeAtividade: ['',[]],
+                  grupo: ['',[]],
                   telefone: ['',[]],
                   telefone2: ['',[]],
                   whatsapp: ['',[]],
@@ -47,6 +53,24 @@ export class EmpresaFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  gruposSelect: Grupo[] = [
+    {value: 'Bebidas', viewValue: 'Bebidas'},
+    {value: 'Alimentação', viewValue: 'Alimentação'},
+    {value: 'Roupas', viewValue: 'Roupas'},
+    {value: 'Calçados', viewValue: 'Calçados'},
+    {value: 'Medicamentos', viewValue: 'Medicamentos'},
+    {value: 'Saúde', viewValue: 'Saúde'},
+    {value: 'Esportes', viewValue: 'Esportes'},
+    {value: 'Serviços', viewValue: 'Serviços'},
+    {value: 'Utensílios', viewValue: 'Utensílios'},
+    {value: 'Ferramentas', viewValue: 'Ferramentas'},
+    {value: 'Construção', viewValue: 'Construção'},
+    {value: 'Educação', viewValue: 'Educação'},
+    {value: 'Papelarias', viewValue: 'Papelarias'},
+    {value: 'Pets', viewValue: 'Pets'},
+    {value: 'Agro', viewValue: 'Agro'}
+  ]
 
   onSubmit(){
     const empresa = this.empresaForm.value;

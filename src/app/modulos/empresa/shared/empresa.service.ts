@@ -13,7 +13,13 @@ export class EmpresaService {
 
   constructor(private http: HttpClient) { }
 
-  create(empresa: Empresa){
+  public listarEmpresaNome(nomeEmpresa: string) {
+    return this.http.get(`${this.api}/pesquisa/${nomeEmpresa}`).pipe(
+      take(1)
+    );
+  }
+
+  public create(empresa: Empresa){
     return this.http.post(`${this.api}`, empresa).pipe(
       take(1)
     );

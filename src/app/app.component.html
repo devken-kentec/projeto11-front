@@ -1,49 +1,56 @@
-<div [ngClass]="{'backdrop': open }"></div>
-<nav class="navbar bg-dark fixed-top">
-  <div class="row col-12">
-    <div class="col-10 col-md-11 col-lg-11 col-xl-11 d-flex align-items-center">
-      <a class="navbar-brand" href="#">
-        <img src="../assets/delta4.jpeg" alt="TAPP">
-      </a>
-      <div class="mt-3 menu-barra">
-        <ul class="list-unstyled d-none d-lg-flex d-xl-flex d-md-flex font-weight-bold">
-          <li class="nav-item">
-              <a routerLink="/home" class="nav-link active">Home</a>
-          </li>
-          <li class="nav-item">
-              <a routerLink="/empresa" class="nav-link active">Empresas</a>
-          </li>
-          <li class="nav-item">
-            <a  routerLink="/produto" class="nav-link active">Produtos</a>
-          </li>
-          <li class="nav-item">
-              <a routerLink="/" class="nav-link active">Publicações</a>
-          </li>
-        </ul>
-      </div>
+<div>
+  <div class="col-12 col-md-12">
+    <div [ngClass]="{'backdrop': open }">
+      <nav class="navbar bg-dark fixed-top col-12">
+        <div class="row col-12">
+          <div class="col-10 col-md-11 col-lg-11 col-xl-11 d-flex align-items-center">
+            <a class="navbar-brand" href="#">
+              <!--img src="../assets/rt_logo.jpg" alt="redetec" style="border-radius: 100%;"-->
+              <h1 class="h3"><span style="color: #06f3af;">.start()</span></h1>
+            </a>
+            <div class="mt-3 menu-barra">
+              <ul class="list-unstyled d-none d-lg-flex d-xl-flex d-md-flex font-weight-bold">
+                <li class="nav-item">
+                    <a routerLink="/home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/home-empresa" class="nav-link active">Empresas</a>
+                </li>
+                <li class="nav-item">
+                  <a  routerLink="/produto" class="nav-link active">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/" class="nav-link active">Publicações</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-2 col-md-1 col-lg-1 col-xl-1 d-flex align-items-center justify-content-end">
+            <button type="button" class="navbar-toggler d-lg-none d-xl-none d-md-none" (click)="abrirMenu()">
+              <img src="../assets/hamburger.gif" alt="Menu">
+            </button>
+          </div>
+        </div>
+      </nav>
     </div>
-    <div class="col-2 col-md-1 col-lg-1 col-xl-1 d-flex align-items-center justify-content-end">
-      <button type="button" class="navbar-toggler d-lg-none d-xl-none d-md-none" (click)="abrirMenu()">
-        <img src="../assets/hamburger.gif" alt="Menu">
-      </button>
+    <div class="sidebar-off" [ngClass]="{'sidebar-open ul': open }">
+      <ul class="list-unstyled font-weight-bold">
+        <li><a type="button" class="menu" routerLink="/categoria" (click)="abrirMenu()">Home</a></li>
+        <li><a type="button" class="menu" (click)="abrirMenu()">Produtos</a></li>
+        <li><a type="button" class="menu" (click)="abrirMenu()">Promoções</a></li>
+        <li><a type="button" class="menu" (click)="abrirMenu()">Contato</a></li>
+      </ul>
     </div>
-  </div>
-</nav>
-<div class="sidebar-off" [ngClass]="{'sidebar-open ul': open }">
-  <ul class="list-unstyled font-weight-bold">
-    <li><a type="button" class="menu" routerLink="/categoria" (click)="abrirMenu()">Home</a></li>
-    <li><a type="button" class="menu" (click)="abrirMenu()">Produtos</a></li>
-    <li><a type="button" class="menu" (click)="abrirMenu()">Promoções</a></li>
-    <li><a type="button" class="menu" (click)="abrirMenu()">Contato</a></li>
-  </ul>
+    </div>
+    <div class="borda-verde col-12 col-md-12" style="margin-top: 99px;" ><span></span></div>
+    <div class="faixa-verde-azul col-12 col-md-12"><span></span></div>
+    <div>
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+    <footer class="d-flex justify-content-center align-items-center " >
+      Desenvolvido por:
+      <span style="color: red;">KEN</span>TEC - Soluções em Informática.
+    </footer>
 </div>
-<div style="margin-top: 80px;">
-  <main>
-    <router-outlet></router-outlet>
-  </main>
-</div>
-<footer class="d-flex justify-content-center align-items-center " >
-  Desenvolvido por:
-  <span style="color: red;">KEN</span>TEC - Soluções em Informática.
-</footer>
-

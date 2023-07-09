@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   mostrarConteudo: boolean = false;
+  nome: string = 'Lorenzo';
 
   constructor(private authSerice: AuthService) { }
 

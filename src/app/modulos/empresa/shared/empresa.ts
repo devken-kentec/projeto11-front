@@ -15,6 +15,7 @@ export interface Empresa {
   municipio: string;
   estado: string;
   ramoDeAtividade: string;
+  grupo: string;
   telefone: string;
   telefone2: string;
   whatsapp: string;
