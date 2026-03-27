@@ -4,9 +4,10 @@ import { Component, OnInit } from '@angular/core';
 import { GlobalService } from '../../shared/global.service';
 
 @Component({
-  selector: 'app-home-conteudo',
-  templateUrl: './home-conteudo.component.html',
-  styleUrls: ['./home-conteudo.component.css']
+    selector: 'app-home-conteudo',
+    templateUrl: './home-conteudo.component.html',
+    styleUrls: ['./home-conteudo.component.css'],
+    standalone: false
 })
 export class HomeConteudoComponent implements OnInit {
 

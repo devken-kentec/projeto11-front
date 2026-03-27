@@ -9,9 +9,10 @@ import { GlobalService } from '../../shared/global.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-perfil-form',
-  templateUrl: './perfil-form.component.html',
-  styleUrls: ['./perfil-form.component.css']
+    selector: 'app-perfil-form',
+    templateUrl: './perfil-form.component.html',
+    styleUrls: ['./perfil-form.component.css'],
+    standalone: false
 })
 export class PerfilFormComponent implements OnInit {
 

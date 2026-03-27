@@ -4,9 +4,10 @@ import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { EmpresaService } from '../../empresa/shared/empresa.service';
 
 @Component({
-  selector: 'app-home-empresa',
-  templateUrl: './home-empresa.component.html',
-  styleUrls: ['./home-empresa.component.css']
+    selector: 'app-home-empresa',
+    templateUrl: './home-empresa.component.html',
+    styleUrls: ['./home-empresa.component.css'],
+    standalone: false
 })
 export class HomeEmpresaComponent implements OnInit {
 

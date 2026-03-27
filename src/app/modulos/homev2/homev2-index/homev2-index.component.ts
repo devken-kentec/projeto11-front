@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-homev2-index',
-  templateUrl: './homev2-index.component.html',
-  styleUrls: ['./homev2-index.component.css']
+    selector: 'app-homev2-index',
+    templateUrl: './homev2-index.component.html',
+    styleUrls: ['./homev2-index.component.css'],
+    standalone: false
 })
 export class Homev2IndexComponent implements OnInit {
 

@@ -10,10 +10,11 @@ import { GlobalService } from '../../shared/global.service';
 import { Amigo } from '../../amigos/shared/amigo';
 
 @Component({
-  selector: 'app-home-pessoas',
-  templateUrl: './home-pessoas.component.html',
-  styleUrls: ['./home-pessoas.component.css'],
-  preserveWhitespaces: true
+    selector: 'app-home-pessoas',
+    templateUrl: './home-pessoas.component.html',
+    styleUrls: ['./home-pessoas.component.css'],
+    preserveWhitespaces: true,
+    standalone: false
 })
 
 export class HomePessoasComponent implements OnInit {

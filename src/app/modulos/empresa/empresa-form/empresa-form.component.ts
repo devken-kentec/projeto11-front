@@ -8,10 +8,11 @@ interface Grupo {
 }
 
 @Component({
-  selector: 'app-empresa-form',
-  templateUrl: './empresa-form.component.html',
-  styleUrls: ['./empresa-form.component.css'],
-  preserveWhitespaces: true
+    selector: 'app-empresa-form',
+    templateUrl: './empresa-form.component.html',
+    styleUrls: ['./empresa-form.component.css'],
+    preserveWhitespaces: true,
+    standalone: false
 })
 export class EmpresaFormComponent implements OnInit {
 
