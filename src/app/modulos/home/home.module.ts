@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
@@ -12,19 +12,13 @@ import { HomeConteudoComponent } from './home-conteudo/home-conteudo.component';
 import { HomePessoasComponent } from './home-pessoas/home-pessoas.component';
 
 
-@NgModule({
-  declarations: [
-    HomeComponent,
-    HomeEmpresaComponent,
-    HomeConteudoComponent,
-    HomePessoasComponent
-  ],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    ReactiveFormsModule,
-    FormsModule,
-    HttpClientModule
-  ]
-})
+@NgModule({ declarations: [
+        HomeComponent,
+        HomeEmpresaComponent,
+        HomeConteudoComponent,
+        HomePessoasComponent
+    ], imports: [CommonModule,
+        HomeRoutingModule,
+        ReactiveFormsModule,
+        FormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class HomeModule { }
