@@ -1,24 +1,28 @@
-import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
+
 
 
 @Component({
     selector: 'app-root',
+    imports:[CommonModule, RouterOutlet ],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
-    standalone: false
+
+
 })
-export class AppComponent implements OnInit {
+export class AppComponent  {
 
   title = 'TAPP';
   open: boolean = false;
   teste: string = 'Lorenzo';
 
-  constructor(private router: Router){ }
 
-  ngOnInit(): void {
-    this.router.navigate(['/home']);
-  }
+
+
 
 
 

@@ -1,3 +1,6 @@
+import { HomeConteudoComponent } from '../home-conteudo/home-conteudo.component';
+import { HomeEmpresaComponent } from '../home-empresa/home-empresa.component';
+import { HomePessoasComponent } from '../home-pessoas/home-pessoas.component';
 import { AuthService } from './../../auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -5,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
     selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css'],
-    standalone: false
+    standalone: true,
+    imports: [HomeConteudoComponent, HomeEmpresaComponent, HomePessoasComponent]
 })
 export class HomeComponent implements OnInit {
 
