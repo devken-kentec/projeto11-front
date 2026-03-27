@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Empresa } from '../../empresa/shared/empresa';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { EmpresaService } from '../../empresa/shared/empresa.service';
 
 @Component({
@@ -10,10 +10,10 @@ import { EmpresaService } from '../../empresa/shared/empresa.service';
 })
 export class HomeEmpresaComponent implements OnInit {
 
-  buscarForm: FormGroup;
+  buscarForm: UntypedFormGroup;
   listaEmpresa: Empresa[] = [];
 
-  constructor(private fb: FormBuilder,
+  constructor(private fb: UntypedFormBuilder,
               private empresaService: EmpresaService) {
     this.buscarForm = this.fb.group(
       {

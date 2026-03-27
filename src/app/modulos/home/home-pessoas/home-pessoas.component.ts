@@ -3,7 +3,7 @@ import { AmigoService } from './../../amigos/shared/amigo.service';
 import { Usuario } from './../shared/usuario';
 import { TipoPostagem } from './../shared/tipo-postagem';
 import { AuthService } from './../../auth/auth.service';
-import { FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { Component, Input, OnInit } from '@angular/core';
 import { HomeService } from '../shared/home.service';
 import { GlobalService } from '../../shared/global.service';
@@ -60,7 +60,7 @@ export class HomePessoasComponent implements OnInit {
     senha: ['', []]
   });
 
-  constructor(private fb: FormBuilder,
+  constructor(private fb: UntypedFormBuilder,
               private homeService: HomeService,
               private globalService: GlobalService,
               private authService: AuthService,

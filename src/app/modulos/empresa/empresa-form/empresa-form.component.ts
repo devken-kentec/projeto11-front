@@ -1,6 +1,6 @@
 import { EmpresaService } from './../shared/empresa.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 
 interface Grupo {
   value: string;
@@ -15,9 +15,9 @@ interface Grupo {
 })
 export class EmpresaFormComponent implements OnInit {
 
-  empresaForm: FormGroup;
+  empresaForm: UntypedFormGroup;
 
-  constructor(private fb: FormBuilder,
+  constructor(private fb: UntypedFormBuilder,
               private empresaService: EmpresaService) {
                 this.empresaForm = this.fb.group({
                   id: [null, []],

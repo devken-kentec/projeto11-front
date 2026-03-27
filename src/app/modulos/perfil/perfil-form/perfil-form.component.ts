@@ -1,5 +1,5 @@
 import { Amigo } from './../../amigos/shared/amigo';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { PerfilService } from './../shared/perfil.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -43,7 +43,7 @@ export class PerfilFormComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private perfilService: PerfilService,
-              private fb: FormBuilder,
+              private fb: UntypedFormBuilder,
               public globalService: GlobalService,
               private sanitizer: DomSanitizer) { }
 
